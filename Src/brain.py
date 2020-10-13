@@ -18,12 +18,16 @@ class Brain(metaclass=Singleton):
                 turn_info.SelfId, turn_info.Map))
         global cmpt
         if cmpt % 4 == 0:
+            cmpt += 1
             return Direction._UP
         elif cmpt % 4 == 1:
+            cmpt += 1
             return Direction._LEFT
         elif cmpt % 4 == 2:
+            cmpt += 1
             return Direction._DOWN
         else:
+            cmpt += 1
             return Direction._RIGHT
 
         # global choix prochain move
