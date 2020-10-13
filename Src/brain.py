@@ -1,10 +1,9 @@
 from Src.Helpers.singleton import Singleton
 from Src.Models.direction import Direction
 from Src.Models.turnInformation import TurnInformation
-
+import random
 
 class Brain(metaclass=Singleton):
-    cmpt = 0
 
     def on_next_move(turn_info: TurnInformation):
         '''
@@ -16,7 +15,8 @@ class Brain(metaclass=Singleton):
         print(
             "the game server wants to know your next move and you have the following informations : the id is {0} and the current map is {1} ".format(
                 turn_info.SelfId, turn_info.Map))
-        global cmpt
+
+        cmpt=random.randint(0,4)
         if cmpt % 4 == 0:
             cmpt += 1
             return Direction._UP
