@@ -3,7 +3,7 @@ from Src.Models.direction import Direction
 from Src.Models.turnInformation import TurnInformation
 
 class Brain(metaclass=Singleton):
-global cpt
+    global cpt
     cpt=0
     def on_next_move(turn_info: TurnInformation):
         '''
