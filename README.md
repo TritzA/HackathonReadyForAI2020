@@ -5,7 +5,9 @@ Description : Hackathon Ready For Ai 2020. On a créé un bot qui permet de gagn
 Compétition organisée par : [PolyHx](https://polyhx.io/)
 
 Partenaire : [Maxence Lefevre](https://github.com/Solonioka)
+
 Partenaire : [Justin Lachapelle](https://github.com/justinlachap)
+
 Partenaire : Vincent Richard
 
 ## Représentation
