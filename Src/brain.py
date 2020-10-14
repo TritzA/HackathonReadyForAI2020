@@ -40,13 +40,6 @@ class Brain(metaclass=Singleton):
         g = 'P' + id + '*'
         d = 'P' + id
 
-        for i in range(le):
-            for j in range(le):
-                if array[i][j] == g or array[i][j] == j:
-                    x = i
-                    y = j
-
-
         if array[x][y] == fg or array[x][y] == fj: # si notre position actuelle est sur notre corps
             # aller dans le vide
             if left == '':
