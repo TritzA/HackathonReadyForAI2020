@@ -1,5 +1,10 @@
 # HackathonReadyForAi2020
- 
+
+## Objectifs
+Coder un agent intelligent capable de jouer et de gagner contre d'autres au jeu Paper.io.
+
+## Représentation
+
 ## Utilisation
 
 École : [Polytechnique Montréal](https://www.polymtl.ca)
