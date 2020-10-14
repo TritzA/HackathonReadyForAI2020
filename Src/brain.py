@@ -20,10 +20,6 @@ class Brain(metaclass=Singleton):
         m = turn_info.Map
         le = turn_info.MapWidth
         array = np.array(m).reshape(le, le)
-        #matrix = [[0 for x in range(le)] for y in range(le)]
-        #for i in range(le):
-        #    for j in range(le):
-        #        matrix[i][j] = m[i + j]
 
         b = turn_info.OccupiedTiles
         coordhead = b['Head'][0]
@@ -54,7 +50,6 @@ class Brain(metaclass=Singleton):
         print(b)
         print(fg)
         if array[x][y] == fg or array[x][y] == fj:
-            print('ggggggggg')
             if left=='':
                 return Direction._LEFT
             elif right == '':
@@ -72,17 +67,14 @@ class Brain(metaclass=Singleton):
             elif up == d:
                 return Direction._UP
 
-        if array[x][y] == g:
-            print('hhhhhhhhhhhh')
-            if left == d:
-                return Direction._LEFT
-            elif right == d:
-                return Direction._RIGHT
-            elif down == d:
-                return Direction._DOWN
-            elif up == d:
-                return Direction._UP
-
+        if left == d:
+            return Direction._LEFT
+        elif right == d:
+            return Direction._RIGHT
+        elif down == d:
+            return Direction._DOWN
+        elif up == d:
+            return Direction._UP
 
         #cmpt=random.randint(0,4)
         #if cmpt % 4 == 0:
@@ -120,19 +112,6 @@ class Brain(metaclass=Singleton):
         # Direction vers cou/tête adversaire
 
         # As a default we put that the direction to UP.
-    def matrice(self, turn_info: TurnInformation):
-        m = turn_info.Map
-        le = turn_info.MapWidth
-        matrix = [[0 for x in range(le)] for y in range(le)]
-        for i in le:
-            for j in le:
-                matrix[i][j] = m[i + j]
-        return matrix
-
-    def getpos(self, turn_info):
-        m = self.matrice(turn_info)
-        l = turn_info.SelfId
-
 
     def on_finalized(turn_info: TurnInformation):
         '''
