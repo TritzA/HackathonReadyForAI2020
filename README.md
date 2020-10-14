@@ -1,8 +1,13 @@
 # HackathonReadyForAi2020
  
+## Utilisation
+
+École : [Polytechnique Montréal](https://www.polymtl.ca)
+
+La suite du README explique comment tester le projet.
+
 ## Environment
- 
-This is the environment (language, IDE, tools) recommended for development
+ This is the environment (language, IDE, tools) recommended for development
 - [Python 3.8](https://www.python.org/downloads/)
 - [Visual Studio Code](https://code.visualstudio.com/Download),
    Recommended extensions: [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker), [LiveShare](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
