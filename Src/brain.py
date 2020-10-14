@@ -5,7 +5,7 @@ import random
 import numpy as np
 
 
-def randomize(a: bool, b: bool, c: bool, d: bool):
+def randomize(a, b, c, d):
     while True:
         cmpt = random.randint(0, 3)
         if cmpt == 0 and b:
@@ -27,6 +27,7 @@ def toucheAuVide(x, y, matrice):
         return True
     if matrice[x + 1][y] == '':
         return True
+
 
 class Brain(metaclass=Singleton):
 
@@ -52,22 +53,22 @@ class Brain(metaclass=Singleton):
         x = le - 1 - int(coordhead['Y'])
         y = int(coordhead['X'])
 
+        # définir nos mouvement (ils peuvent sembler étranges, mais ils dépendent de la matrice réée par le reshape())
         left = array[x][y - 1]
         right = array[x][y + 1]
         up = array[x - 1][y]
         down = array[x + 1][y]
 
-        id = str(turn_info.SelfId)
-        fg = 'P' + id + '*-P' + id
-        fj = 'P' + id + '-P' + id + '*'
-        g = 'P' + id + '*'
-        f = 'P' + id
+        # définitions utiles relatives au bot
+        id = str(turn_info.SelfId)  # notre no de joueur
+        fg = 'P' + id + '*-P' + id  # première option de tête sur corps
+        fj = 'P' + id + '-P' + id + '*'  # deuxième option de tête sur corps
+        g = 'P' + id + '*'  # notre tête
+        f = 'P' + id  # notre corps
         a, b, c, d = False, False, False, False
-        print(array)
 
         if array[x][y] == fg or array[x][y] == fj:  # si notre position actuelle est sur notre corps
             # aller dans le vide
-            
             if left == '':
                 a = True
             if up == '':
@@ -78,7 +79,7 @@ class Brain(metaclass=Singleton):
                 d = True
             if a or b or c or d:
                 return randomize(a, b, c, d)
-            
+
             # aller sur le cou de l'adversaire
             if left[0] == 'p':
                 a = True
@@ -91,18 +92,19 @@ class Brain(metaclass=Singleton):
             if a or b or c or d:
                 return randomize(a, b, c, d)
 
-            #Aller sur le corps de l'adversaire
-            if left[0] == 'P' and len(left) == 2 and not left==f:
+            # aller sur le corps de l'adversaire
+            if left[0] == 'P' and len(left) == 2 and not left == f:
                 a = True
             if up[0] == 'P' and len(up) == 2 and not up == f:
-                 b = True
+                b = True
             if right[0] == 'P' and len(right) == 2 and not right == f:
                 c = True
             if down[0] == 'P' and len(down) == 2 and not down == f:
                 d = True
             if a or b or c or d:
                 return randomize(a, b, c, d)
-            
+
+            # aller sur une position qui permettra d'atteindre une case vide au prochain coup
             if left == f and toucheAuVide(x, y - 1, array):
                 a = True
             if up == f and toucheAuVide(x - 1, y, array):
@@ -136,7 +138,6 @@ class Brain(metaclass=Singleton):
             return Direction._RIGHT
         if down == f:
             return Direction._DOWN
-
 
     def on_finalized(turn_info: TurnInformation):
         '''
