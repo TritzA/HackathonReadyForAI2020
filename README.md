@@ -1,4 +1,5 @@
 # HackathonReadyForAi2020
+
 Description : 
 
 Partenaire : [Maxence Lefevre](https://github.com/Solonioka)
@@ -6,6 +7,7 @@ Partenaire : [Justin Lachapelle](https://github.com/justinlachap)
 Partenaire : Vincent Richard
 
 ## Objectifs
+
 Coder un agent intelligent capable de jouer et de gagner contre d'autres au jeu Paper.io.
 
 ## Représentation
@@ -17,6 +19,7 @@ Coder un agent intelligent capable de jouer et de gagner contre d'autres au jeu 
 La suite du README explique comment tester le projet.
 
 ## Environment
+
  This is the environment (language, IDE, tools) recommended for development
 - [Python 3.8](https://www.python.org/downloads/)
 - [Visual Studio Code](https://code.visualstudio.com/Download),
@@ -28,6 +31,7 @@ La suite du README explique comment tester le projet.
 ## Setup
  
 ### Download code repository
+
 1. Make sure you have [Git](https://git-scm.com/downloads) installed on your machine
 2. In Github, click on the green button label "Code" in top right of the repository
 3. Copy the HTTPS url
@@ -37,6 +41,7 @@ La suite du README explique comment tester le projet.
 If you need more help click [Here](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/)
  
 ### Install required python packages
+
 1. Make sure to have [Python 3.8](https://www.python.org/downloads/) installed on your machine
 2. Clone code repository (see section above to know how)
 3. Open a terminal in the root of the project
@@ -61,6 +66,7 @@ Good luck!
 ## Local game simulation
 
 ### Download the local GameServer
+
 1. Make sure you have [Docker](https://docs.docker.com/engine/install/) installed on your machine and __**running**__
 2. Login into docker: 
     - With Docker Hub: `docker login`
@@ -134,6 +140,7 @@ Good luck!
 ## Clean up
  
 ### Clean Docker environment
+
 1. Stop and remove container
     1. `docker stop gs_container`
     2. If you remove --rm earlier: `docker rm gs_container`
