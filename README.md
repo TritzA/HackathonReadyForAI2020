@@ -1,16 +1,97 @@
 # HackathonReadyForAi2020
 
-Description : 
+Description : Hackathon Ready For Ai 2020. On a créé un bot qui permet de gagner contre d'autres joueurs à un jeu inspiré de Paper.io Hackathon Ready For Ai 2020. On a créé un bot qui permet de gagner contre d'autres joueurs à un jeu inspiré de Paper.io. On est arrivé 4e sur 25 équipes. Au moment de la compétition, on était une des seules équipe en première session de bac (la compétition est ouverte à tous les niveaux). On est fier de notre résultat ! Notre nom d'équipe est MSL.
+
+Compétition organisée par : [PolyHx](https://polyhx.io/)
 
 Partenaire : [Maxence Lefevre](https://github.com/Solonioka)
 Partenaire : [Justin Lachapelle](https://github.com/justinlachap)
 Partenaire : Vincent Richard
 
-## Objectifs
-
-Coder un agent intelligent capable de jouer et de gagner contre d'autres au jeu Paper.io.
-
 ## Représentation
+
+### Decription de l'évènement et classement
+
+Description de l'évènement.
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/evenement.PNG)
+
+Classement global. Notre nom d'équipe est MSL, on est dans le top 5.
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/classement%20final.PNG)
+
+Zoom sur le haut du classement. Notre nom d'équipe est MSL, on est dans le top 5.
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/top.PNG)
+
+Zoom sur le bas du classement.
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/fin.PNG)
+
+### Première exemple de partie : partie de classement évaluée
+
+Exemple de partie de le compétition (étape 1/6)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/1.PNG)
+
+Exemple de partie de le compétition (étape 2/6)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/2.PNG)
+
+Exemple de partie de le compétition (étape 3/6)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/3.PNG)
+
+Exemple de partie de le compétition (étape 4/6)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/4.PNG)
+
+Exemple de partie de le compétition (étape 5/6)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/5.PNG)
+
+Exemple de partie de le compétition (étape 6/6)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/6.PNG)
+
+Exemple de partie de le compétition (score)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/score.PNG)
+
+### Second exemple de partie : Partie finale de la compétition entre les bots du top 8
+
+Partie finale (étape 1/7)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_finale/1.PNG)
+
+Partie finale (étape 2/7)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_finale/2.PNG)
+
+Partie finale (étape 3/7)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_finale/3.PNG)
+
+Partie finale (étape 4/7)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_finale/4.PNG)
+
+Partie finale (étape 5/7)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_finale/5.PNG)
+
+Partie finale (étape 6/7)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_finale/6.PNG)
+
+Partie finale (étape 7/7)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_finale/7.PNG)
+
+Partie finale (score)
+
+![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_finale/classement_partie_finale.PNG)
+
 
 ## Utilisation
 
