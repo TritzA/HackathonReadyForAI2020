@@ -80,13 +80,13 @@ class Brain(metaclass=Singleton):
                 return randomize(a, b, c, d)
 
             #Aller sur le corps de l'adversaire
-            if left[0] == 'P':
+            if left[0] == 'P' and len(left) == 2:
                 a = True
-            if up[0] == 'P':
+            if up[0] == 'P' and len(up) == 2:
                  b = True
-            if right[0] == 'P':
+            if right[0] == 'P' and len(right) == 2:
                 c = True
-            if down[0] == 'P':
+            if down[0] == 'P' and len(down) == 2:
                 d = True
             if a or b or c or d:
                 return randomize(a, b, c, d)
