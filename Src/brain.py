@@ -17,11 +17,13 @@ class Brain(metaclass=Singleton):
         print(
             "the game server wants to know your next move and you have the following informations : the id is {0} and the current map is {1} ".format(
                 turn_info.SelfId, turn_info.Map))
-
+        
+        # convertir la liste en matrice 2D
         m = turn_info.Map
         le = turn_info.MapWidth
         array = np.array(m).reshape(le, le)
 
+        # obtenir les positions actuels
         b = turn_info.OccupiedTiles
         coordhead = b['Head'][0]
         x = le - 1 - int(coordhead['Y'])
@@ -44,12 +46,7 @@ class Brain(metaclass=Singleton):
                     x = i
                     y = j
 
-        print(array)
-        print(array[x][y])
-        print(x)
-        print(y)
-        print(b)
-        print(fg)
+
         if array[x][y] == fg or array[x][y] == fj:
             if left == '':
                 return Direction._LEFT
@@ -99,28 +96,6 @@ class Brain(metaclass=Singleton):
         #    cmpt += 1
         #    return Direction._RIGHT
 
-        # global choix prochain move
-        # Fonctions utiles:
-        # Calcul du nombre de bloc nous séparant de notre zone
-        # retourne blocs, choix prochain move
-
-        # Si nb_pas_restants == distance notre_tête-zone:
-        # Retour en ligne droite vers notre zone
-
-        # Si une des possibilités de prochain move == W:
-        # trouver options où pas de mur next move
-        # parmis ces options, trouver celle plus proche de notre zone:
-        # si 2 options égales: Choisir option la plus loin de ennemi le plus proche
-
-        # Défensive:
-        # Si distance notre zone + 3 >= distance tête adversaire / - notre coup:
-        #
-
-        # Offensive:
-        # Si tête adversaire dans notre zone AND notre tête dans notre zone:
-        # Direction vers cou/tête adversaire
-
-        # As a default we put that the direction to UP.
 
     def on_finalized(turn_info: TurnInformation):
         '''
