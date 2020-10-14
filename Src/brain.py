@@ -4,6 +4,7 @@ from Src.Models.turnInformation import TurnInformation
 import random
 import numpy as np
 
+
 class Brain(metaclass=Singleton):
 
     def on_next_move(turn_info: TurnInformation):
@@ -23,19 +24,19 @@ class Brain(metaclass=Singleton):
 
         b = turn_info.OccupiedTiles
         coordhead = b['Head'][0]
-        x = le-1-int(coordhead['Y'])
+        x = le - 1 - int(coordhead['Y'])
         y = int(coordhead['X'])
 
-        left = array[x][y-1]
-        right = array[x][y+1]
-        up = array[x-1][y]
-        down = array[x+1][y]
+        left = array[x][y - 1]
+        right = array[x][y + 1]
+        up = array[x - 1][y]
+        down = array[x + 1][y]
 
         id = str(turn_info.SelfId)
-        fg = 'P'+id+'*-P'+id
+        fg = 'P' + id + '*-P' + id
         fj = 'P' + id + '-P' + id + '*'
-        g = 'P'+id+'*'
-        d = 'P'+id
+        g = 'P' + id + '*'
+        d = 'P' + id
 
         for i in range(le):
             for j in range(le):
@@ -50,43 +51,51 @@ class Brain(metaclass=Singleton):
         print(b)
         print(fg)
         if array[x][y] == fg or array[x][y] == fj:
-            if left=='':
+            if left == '':
                 return Direction._LEFT
+            elif up == '':
+                return Direction._UP
             elif right == '':
                 return Direction._RIGHT
             elif down == '':
                 return Direction._DOWN
-            elif up == '':
-                return Direction._UP
             elif left == d:
                 return Direction._LEFT
+            elif up == d:
+                return Direction._UP
             elif right == d:
                 return Direction._RIGHT
             elif down == d:
                 return Direction._DOWN
-            elif up == d:
+            elif left[0] == 'p':
+                return Direction._LEFT
+            elif up[0] == 'p':
                 return Direction._UP
+            elif right[0] == 'p':
+                return Direction._RIGHT
+            elif down[0] == 'p':
+                return Direction._DOWN
 
         if left == d:
             return Direction._LEFT
+        elif up == d:
+            return Direction._UP
         elif right == d:
             return Direction._RIGHT
         elif down == d:
             return Direction._DOWN
-        elif up == d:
-            return Direction._UP
 
-        #cmpt=random.randint(0,4)
-        #if cmpt % 4 == 0:
+        # cmpt=random.randint(0,4)
+        # if cmpt % 4 == 0:
         #    cmpt += 1
         #    return Direction._UP
-        #elif cmpt % 4 == 1:
+        # elif cmpt % 4 == 1:
         #    cmpt += 1
         #    return Direction._LEFT
-        #elif cmpt % 4 == 2:
+        # elif cmpt % 4 == 2:
         #    cmpt += 1
         #    return Direction._DOWN
-        #else:
+        # else:
         #    cmpt += 1
         #    return Direction._RIGHT
 
