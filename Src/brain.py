@@ -10,11 +10,11 @@ def randomize(a: bool, b: bool, c: bool, d: bool):
         cmpt = random.randint(0, 4)
         if cmpt % 4 == 0 and b:
             return Direction._UP
-        elif cmpt % 4 == 1 and a:
+        if cmpt % 4 == 1 and a:
             return Direction._LEFT
-        elif cmpt % 4 == 2 and d:
+        if cmpt % 4 == 2 and d:
             return Direction._DOWN
-        elif cmpt%4 == 3 and c:
+        if cmpt%4 == 3 and c:
             return Direction._RIGHT
 
 
@@ -65,8 +65,6 @@ class Brain(metaclass=Singleton):
             if down == '':
                 d=True
             if a or b or c or d:
-                print('h')
-                print(randomize(a,b,c,d))
                 return randomize(a,b,c,d)
 
             # aller sur notre corps
@@ -79,7 +77,6 @@ class Brain(metaclass=Singleton):
             if down == f:
                 d=True
             if a or b or c or d:
-                print('h')
                 return randomize(a,b,c,d)
 
             # aller sur le corps de l'adversaire
