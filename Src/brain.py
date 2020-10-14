@@ -2,6 +2,7 @@ from Src.Helpers.singleton import Singleton
 from Src.Models.direction import Direction
 from Src.Models.turnInformation import TurnInformation
 import random
+import numpy as np
 
 class Brain(metaclass=Singleton):
 
@@ -16,19 +17,86 @@ class Brain(metaclass=Singleton):
             "the game server wants to know your next move and you have the following informations : the id is {0} and the current map is {1} ".format(
                 turn_info.SelfId, turn_info.Map))
 
-        cmpt=random.randint(0,4)
-        if cmpt % 4 == 0:
-            cmpt += 1
-            return Direction._UP
-        elif cmpt % 4 == 1:
-            cmpt += 1
-            return Direction._LEFT
-        elif cmpt % 4 == 2:
-            cmpt += 1
-            return Direction._DOWN
-        else:
-            cmpt += 1
-            return Direction._RIGHT
+        m = turn_info.Map
+        le = turn_info.MapWidth
+        array = np.array(m).reshape(le, le)
+        #matrix = [[0 for x in range(le)] for y in range(le)]
+        #for i in range(le):
+        #    for j in range(le):
+        #        matrix[i][j] = m[i + j]
+
+        b = turn_info.OccupiedTiles
+        coordhead = b['Head'][0]
+        x = le-1-int(coordhead['Y'])
+        y = int(coordhead['X'])
+
+        left = array[x][y-1]
+        right = array[x][y+1]
+        up = array[x-1][y]
+        down = array[x+1][y]
+
+        id = str(turn_info.SelfId)
+        fg = 'P'+id+'*-P'+id
+        fj = 'P' + id + '-P' + id + '*'
+        g = 'P'+id+'*'
+        d = 'P'+id
+
+        for i in range(le):
+            for j in range(le):
+                if array[i][j] == g or array[i][j] == j:
+                    x = i
+                    y = j
+
+        print(array)
+        print(array[x][y])
+        print(x)
+        print(y)
+        print(b)
+        print(fg)
+        if array[x][y] == fg or array[x][y] == fj:
+            print('ggggggggg')
+            if left=='':
+                return Direction._LEFT
+            elif right == '':
+                return Direction._RIGHT
+            elif down == '':
+                return Direction._DOWN
+            elif up == '':
+                return Direction._UP
+            elif left == d:
+                return Direction._LEFT
+            elif right == d:
+                return Direction._RIGHT
+            elif down == d:
+                return Direction._DOWN
+            elif up == d:
+                return Direction._UP
+
+        if array[x][y] == g:
+            print('hhhhhhhhhhhh')
+            if left == d:
+                return Direction._LEFT
+            elif right == d:
+                return Direction._RIGHT
+            elif down == d:
+                return Direction._DOWN
+            elif up == d:
+                return Direction._UP
+
+
+        #cmpt=random.randint(0,4)
+        #if cmpt % 4 == 0:
+        #    cmpt += 1
+        #    return Direction._UP
+        #elif cmpt % 4 == 1:
+        #    cmpt += 1
+        #    return Direction._LEFT
+        #elif cmpt % 4 == 2:
+        #    cmpt += 1
+        #    return Direction._DOWN
+        #else:
+        #    cmpt += 1
+        #    return Direction._RIGHT
 
         # global choix prochain move
         # Fonctions utiles:
@@ -52,6 +120,19 @@ class Brain(metaclass=Singleton):
         # Direction vers cou/tête adversaire
 
         # As a default we put that the direction to UP.
+    def matrice(self, turn_info: TurnInformation):
+        m = turn_info.Map
+        le = turn_info.MapWidth
+        matrix = [[0 for x in range(le)] for y in range(le)]
+        for i in le:
+            for j in le:
+                matrix[i][j] = m[i + j]
+        return matrix
+
+    def getpos(self, turn_info):
+        m = self.matrice(turn_info)
+        l = turn_info.SelfId
+
 
     def on_finalized(turn_info: TurnInformation):
         '''
