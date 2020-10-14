@@ -1,5 +1,4 @@
 # HackathonReadyForAi2020
-
 Description : 
 
 Partenaire : [Maxence Lefevre](https://github.com/Solonioka)
