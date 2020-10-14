@@ -6,9 +6,9 @@ Description : On a créé un bot qui permet de gagner contre d'autres joueurs à
 
 Compétition organisée par : [PolyHx](https://polyhx.io/)
 
-Partenaire : [Maxence Lefevre](https://github.com/Solonioka)
-
 Partenaire : [Justin Lachapelle](https://github.com/justinlachap)
+
+Partenaire : [Maxence Lefevre](https://github.com/Solonioka)
 
 Partenaire : Vincent Richard
 
