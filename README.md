@@ -1,6 +1,6 @@
-# HackathonReadyForAi2020
+# HackathonReadyForAI2020
 
-Hackathon Ready For Ai 2020 (4e place sur 25).
+Hackathon Ready For AI 2020 (4e place sur 25).
 
 Description : On a créé un bot qui permet de gagner contre d'autres joueurs à un jeu inspiré de Paper.io Hackathon Ready For Ai 2020. On a créé un bot qui permet de gagner contre d'autres joueurs à un jeu inspiré de Paper.io. On est arrivé 4e sur 25 équipes. Au moment de la compétition, on était une des seules équipe en première session de bac (la compétition est ouverte à tous les niveaux). On est fier de notre résultat ! Notre nom d'équipe est MSL.
 
