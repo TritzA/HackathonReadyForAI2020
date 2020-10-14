@@ -5,6 +5,19 @@ import random
 import numpy as np
 
 
+def randomize(a: bool, b: bool, c: bool, d: bool):
+    while True:
+        cmpt = random.randint(0, 4)
+        if cmpt % 4 == 0 and b:
+            return Direction._UP
+        elif cmpt % 4 == 1 and a:
+            return Direction._LEFT
+        elif cmpt % 4 == 2 and d:
+            return Direction._DOWN
+        elif cmpt%4 == 3 and c:
+            return Direction._RIGHT
+
+
 class Brain(metaclass=Singleton):
 
     def on_next_move(turn_info: TurnInformation):
@@ -17,15 +30,15 @@ class Brain(metaclass=Singleton):
         print(
             "the game server wants to know your next move and you have the following informations : the id is {0} and the current map is {1} ".format(
                 turn_info.SelfId, turn_info.Map))
-        
+
         # convertir la liste en matrice 2D
         m = turn_info.Map
         le = turn_info.MapWidth
         array = np.array(m).reshape(le, le)
 
         # obtenir les positions actuels
-        b = turn_info.OccupiedTiles
-        coordhead = b['Head'][0]
+        e = turn_info.OccupiedTiles
+        coordhead = e['Head'][0]
         x = le - 1 - int(coordhead['Y'])
         y = int(coordhead['X'])
 
@@ -38,47 +51,63 @@ class Brain(metaclass=Singleton):
         fg = 'P' + id + '*-P' + id
         fj = 'P' + id + '-P' + id + '*'
         g = 'P' + id + '*'
-        d = 'P' + id
-
-        if array[x][y] == fg or array[x][y] == fj: # si notre position actuelle est sur notre corps
+        f = 'P' + id
+        a, b, c, d = False, False, False, False
+        print(array)
+        if array[x][y] == fg or array[x][y] == fj:  # si notre position actuelle est sur notre corps
             # aller dans le vide
             if left == '':
-                return Direction._LEFT
-            elif up == '':
-                return Direction._UP
-            elif right == '':
-                return Direction._RIGHT
-            elif down == '':
-                return Direction._DOWN
+                a=True
+            if up == '':
+                b=True
+            if right == '':
+                c=True
+            if down == '':
+                d=True
+            if a or b or c or d:
+                print('h')
+                print(randomize(a,b,c,d))
+                return randomize(a,b,c,d)
+
             # aller sur notre corps
-            elif left == d:
-                return Direction._LEFT
-            elif up == d:
-                return Direction._UP
-            elif right == d:
-                return Direction._RIGHT
-            elif down == d:
-                return Direction._DOWN
+            if left == f:
+                a=True
+            if up == f:
+                b=True
+            if right == f:
+                c=True
+            if down == f:
+                d=True
+            if a or b or c or d:
+                print('h')
+                return randomize(a,b,c,d)
+
             # aller sur le corps de l'adversaire
-            elif left[0] == 'p':
-                return Direction._LEFT
-            elif up[0] == 'p':
-                return Direction._UP
-            elif right[0] == 'p':
-                return Direction._RIGHT
-            elif down[0] == 'p':
-                return Direction._DOWN
-        
+            if left[0] == 'p':
+                a = True
+            if up[0] == 'p':
+                b=True
+            if right[0] == 'p':
+                c=True
+            if down[0] == 'p':
+                d=True
+            if a or b or c or d:
+                print('h')
+                return randomize(a,b,c,d)
+
         # si notre position actuelle est dans le vide
         # aller sur notre corps qui est forcément à 1 de distance
-        if left == d:
-            return Direction._LEFT
-        elif up == d:
-            return Direction._UP
-        elif right == d:
-            return Direction._RIGHT
-        elif down == d:
-            return Direction._DOWN
+        if left == f:
+            a=True
+        if up == f:
+            b=True
+        if right == f:
+            c=True
+        if down == f:
+            d=True
+        if a or b or c or d:
+            print('h')
+            return randomize(a,b,c,d)
 
         # cmpt=random.randint(0,4)
         # if cmpt % 4 == 0:
@@ -97,7 +126,7 @@ class Brain(metaclass=Singleton):
 
     def on_finalized(turn_info: TurnInformation):
         '''
-        Once the game is finished, this method is triggered with the final state of the map. 
+        Once the game is finished, this method is triggered with the final state of the map.
         It could be used to train the AI for example.
         @param turn_info: Information from the current turn
         '''
