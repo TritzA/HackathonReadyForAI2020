@@ -79,6 +79,18 @@ class Brain(metaclass=Singleton):
             if a or b or c or d:
                 return randomize(a, b, c, d)
 
+            #Aller sur le corps de l'adversaire
+            if left[0] == 'P':
+                a = True
+            if up[0] == 'P':
+                 b = True
+            if right[0] == 'P':
+                c = True
+            if down[0] == 'P':
+                d = True
+            if a or b or c or d:
+                return randomize(a, b, c, d)
+
             # aller sur notre corps
             if left == f:
                 a = True
@@ -94,16 +106,13 @@ class Brain(metaclass=Singleton):
         # si notre position actuelle est dans le vide
         # aller sur notre corps qui est forcément à 1 de distance
         if left == f:
-            a = True
+            return Direction._LEFT
         if up == f:
-            b = True
+            return Direction._UP
         if right == f:
-            c = True
+            return Direction._RIGHT
         if down == f:
-            d = True
-        if a or b or c or d:
-            print('h')
-            return randomize(a, b, c, d)
+            return Direction._DOWN
 
         # cmpt=random.randint(0,4)
         # if cmpt % 4 == 0:
