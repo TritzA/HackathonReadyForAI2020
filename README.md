@@ -1,5 +1,11 @@
 # HackathonReadyForAi2020
 
+Description : 
+
+Partenaire : [Maxence Lefevre](https://github.com/Solonioka)
+Partenaire : [Justin Lachapelle](https://github.com/justinlachap)
+Partenaire : Vincent Richard
+
 ## Objectifs
 Coder un agent intelligent capable de jouer et de gagner contre d'autres au jeu Paper.io.
 
