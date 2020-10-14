@@ -47,7 +47,8 @@ class Brain(metaclass=Singleton):
                     y = j
 
 
-        if array[x][y] == fg or array[x][y] == fj:
+        if array[x][y] == fg or array[x][y] == fj: # si notre position actuelle est sur notre corps
+            # aller dans le vide
             if left == '':
                 return Direction._LEFT
             elif up == '':
@@ -56,6 +57,7 @@ class Brain(metaclass=Singleton):
                 return Direction._RIGHT
             elif down == '':
                 return Direction._DOWN
+            # aller sur notre corps
             elif left == d:
                 return Direction._LEFT
             elif up == d:
@@ -64,6 +66,7 @@ class Brain(metaclass=Singleton):
                 return Direction._RIGHT
             elif down == d:
                 return Direction._DOWN
+            # aller sur le corps de l'adversaire
             elif left[0] == 'p':
                 return Direction._LEFT
             elif up[0] == 'p':
@@ -72,7 +75,9 @@ class Brain(metaclass=Singleton):
                 return Direction._RIGHT
             elif down[0] == 'p':
                 return Direction._DOWN
-
+        
+        # si notre position actuelle est dans le vide
+        # aller sur notre corps qui est forcément à 1 de distance
         if left == d:
             return Direction._LEFT
         elif up == d:
