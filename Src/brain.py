@@ -7,14 +7,14 @@ import numpy as np
 
 def randomize(a: bool, b: bool, c: bool, d: bool):
     while True:
-        cmpt = random.randint(0, 4)
-        if cmpt % 4 == 0 and b:
+        cmpt = random.randint(0, 3)
+        if cmpt == 0 and b:
             return Direction._UP
-        if cmpt % 4 == 1 and a:
+        if cmpt == 1 and a:
             return Direction._LEFT
-        if cmpt % 4 == 2 and d:
+        if cmpt == 2 and d:
             return Direction._DOWN
-        if cmpt%4 == 3 and c:
+        if cmpt == 3 and c:
             return Direction._RIGHT
 
 
@@ -57,54 +57,53 @@ class Brain(metaclass=Singleton):
         if array[x][y] == fg or array[x][y] == fj:  # si notre position actuelle est sur notre corps
             # aller dans le vide
             if left == '':
-                a=True
+                a = True
             if up == '':
-                b=True
+                b = True
             if right == '':
-                c=True
+                c = True
             if down == '':
-                d=True
+                d = True
             if a or b or c or d:
-                return randomize(a,b,c,d)
+                return randomize(a, b, c, d)
 
-            # aller sur notre corps
-            if left == f:
-                a=True
-            if up == f:
-                b=True
-            if right == f:
-                c=True
-            if down == f:
-                d=True
-            if a or b or c or d:
-                return randomize(a,b,c,d)
-
-            # aller sur le corps de l'adversaire
+            # aller sur le cou de l'adversaire
             if left[0] == 'p':
                 a = True
             if up[0] == 'p':
-                b=True
+                 b = True
             if right[0] == 'p':
-                c=True
+                c = True
             if down[0] == 'p':
-                d=True
+                d = True
             if a or b or c or d:
-                print('h')
-                return randomize(a,b,c,d)
+                return randomize(a, b, c, d)
+
+            # aller sur notre corps
+            if left == f:
+                a = True
+            if up == f:
+                b = True
+            if right == f:
+                c = True
+            if down == f:
+                d = True
+            if a or b or c or d:
+                return randomize(a, b, c, d)
 
         # si notre position actuelle est dans le vide
         # aller sur notre corps qui est forcément à 1 de distance
         if left == f:
-            a=True
+            a = True
         if up == f:
-            b=True
+            b = True
         if right == f:
-            c=True
+            c = True
         if down == f:
-            d=True
+            d = True
         if a or b or c or d:
             print('h')
-            return randomize(a,b,c,d)
+            return randomize(a, b, c, d)
 
         # cmpt=random.randint(0,4)
         # if cmpt % 4 == 0:
@@ -119,7 +118,6 @@ class Brain(metaclass=Singleton):
         # else:
         #    cmpt += 1
         #    return Direction._RIGHT
-
 
     def on_finalized(turn_info: TurnInformation):
         '''
