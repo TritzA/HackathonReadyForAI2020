@@ -68,6 +68,7 @@ class Brain(metaclass=Singleton):
 
         if array[x][y] == fg or array[x][y] == fj:  # si notre position actuelle est sur notre corps
             # aller dans le vide
+            print('hhhhhhhhhhhhhhhhhh')
             if left == '':
                 a = True
             if up == '':
@@ -78,7 +79,7 @@ class Brain(metaclass=Singleton):
                 d = True
             if a or b or c or d:
                 return randomize(a, b, c, d)
-
+            print('fsdfgsdfgsdfgsdfgsdfg')
             # aller sur le cou de l'adversaire
             if left[0] == 'p':
                 a = True
@@ -92,17 +93,17 @@ class Brain(metaclass=Singleton):
                 return randomize(a, b, c, d)
 
             #Aller sur le corps de l'adversaire
-            if left[0] == 'P' and len(left) == 2:
+            if left[0] == 'P' and len(left) == 2 and not left==f:
                 a = True
-            if up[0] == 'P' and len(up) == 2:
+            if up[0] == 'P' and len(up) == 2 and not up == f:
                  b = True
-            if right[0] == 'P' and len(right) == 2:
+            if right[0] == 'P' and len(right) == 2 and not right == f:
                 c = True
-            if down[0] == 'P' and len(down) == 2:
+            if down[0] == 'P' and len(down) == 2 and not down == f:
                 d = True
             if a or b or c or d:
                 return randomize(a, b, c, d)
-
+            print('zdfgsdgdfgsdfgsdfgsdfg')
             if left == f and toucheAuVide(x, y - 1, array):
                 a = True
             if up == f and toucheAuVide(x - 1, y, array):
