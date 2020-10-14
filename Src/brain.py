@@ -18,6 +18,17 @@ def randomize(a: bool, b: bool, c: bool, d: bool):
             return Direction._RIGHT
 
 
+def toucheAuVide(x, y, matrice):
+    print('OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+    if matrice[x][y - 1] == '':
+        return True
+    if matrice[x][y + 1] == '':
+        return True
+    if matrice[x - 1][y] == '':
+        return True
+    if matrice[x + 1][y] == '':
+        return True
+
 class Brain(metaclass=Singleton):
 
     def on_next_move(turn_info: TurnInformation):
@@ -54,6 +65,7 @@ class Brain(metaclass=Singleton):
         f = 'P' + id
         a, b, c, d = False, False, False, False
         print(array)
+
         if array[x][y] == fg or array[x][y] == fj:  # si notre position actuelle est sur notre corps
             # aller dans le vide
             if left == '':
@@ -87,6 +99,17 @@ class Brain(metaclass=Singleton):
             if right[0] == 'P' and len(right) == 2:
                 c = True
             if down[0] == 'P' and len(down) == 2:
+                d = True
+            if a or b or c or d:
+                return randomize(a, b, c, d)
+
+            if left == f and toucheAuVide(x, y - 1, array):
+                a = True
+            if up == f and toucheAuVide(x - 1, y, array):
+                b = True
+            if right == f and toucheAuVide(x, y + 1, array):
+                c = True
+            if down == f and toucheAuVide(x + 1, y, array):
                 d = True
             if a or b or c or d:
                 return randomize(a, b, c, d)

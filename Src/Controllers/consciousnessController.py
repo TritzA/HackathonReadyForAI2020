@@ -26,7 +26,7 @@ def on_next_move():
     @return: The direction your AI chose as his next move.
     '''
 
-    toSend = Brain.on_next_move(turn_info=TurnInformation(request.data) )
+    toSend = Brain.on_next_move(turn_info=TurnInformation(request.data))
     return json.dumps(toSend.__dict__)
 
 @ConsciousnessController.route('/Consciousness/PutFinalMap/', methods = ['PUT'])
