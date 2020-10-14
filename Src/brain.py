@@ -55,18 +55,6 @@ class Brain(metaclass=Singleton):
         a, b, c, d = False, False, False, False
         print(array)
         if array[x][y] == fg or array[x][y] == fj:  # si notre position actuelle est sur notre corps
-            # aller sur le cou de l'adversaire
-            if left[0] == 'p':
-                a = True
-            if up[0] == 'p':
-                b = True
-            if right[0] == 'p':
-                c = True
-            if down[0] == 'p':
-                d = True
-            if a or b or c or d:
-                return randomize(a, b, c, d)
-
             # aller dans le vide
             if left == '':
                 a = True
@@ -75,6 +63,18 @@ class Brain(metaclass=Singleton):
             if right == '':
                 c = True
             if down == '':
+                d = True
+            if a or b or c or d:
+                return randomize(a, b, c, d)
+
+            # aller sur le cou de l'adversaire
+            if left[0] == 'p':
+                a = True
+            if up[0] == 'p':
+                b = True
+            if right[0] == 'p':
+                c = True
+            if down[0] == 'p':
                 d = True
             if a or b or c or d:
                 return randomize(a, b, c, d)
