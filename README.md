@@ -32,7 +32,7 @@ Zoom sur le bas du classement.
 
 ![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/fin.PNG)
 
-### Première exemple de partie : partie de classement évaluée
+### Première exemple de partie : partie de classement évaluée (Notre nom d'équipe est MSL)
 
 Exemple de partie de le compétition (étape 1/6)
 
@@ -62,7 +62,7 @@ Exemple de partie de le compétition (score)
 
 ![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/score.PNG)
 
-### Second exemple de partie : Partie finale de la compétition entre les bots du top 8
+### Second exemple de partie : Partie finale de la compétition entre les bots du top 8 (Notre nom d'équipe est MSL)
 
 Partie finale (étape 1/7)
 
