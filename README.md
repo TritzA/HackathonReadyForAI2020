@@ -14,17 +14,17 @@ Partenaire : Vincent Richard
 
 ## Représentation
 
-### Decription de l'évènement et classement
+### Decription de l'évènement et classement (notre nom d'équipe est MSL)
 
 Description de l'évènement.
 
 ![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/evenement.PNG)
 
-Classement global. Notre nom d'équipe est MSL, on est dans le top 5.
+Classement global.
 
 ![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/classement%20final.PNG)
 
-Zoom sur le haut du classement. Notre nom d'équipe est MSL, on est dans le top 5.
+Zoom sur le haut du classement.
 
 ![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/top.PNG)
 
@@ -32,7 +32,7 @@ Zoom sur le bas du classement.
 
 ![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/fin.PNG)
 
-### Première exemple de partie : partie de classement évaluée (Notre nom d'équipe est MSL)
+### Première exemple de partie : partie de classement évaluée (notre nom d'équipe est MSL)
 
 Exemple de partie de le compétition (étape 1/6)
 
@@ -62,7 +62,7 @@ Exemple de partie de le compétition (score)
 
 ![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/images_partie_rank/score.PNG)
 
-### Second exemple de partie : Partie finale de la compétition entre les bots du top 8 (Notre nom d'équipe est MSL)
+### Second exemple de partie : Partie finale de la compétition entre les bots du top 8 (notre nom d'équipe est MSL)
 
 Partie finale (étape 1/7)
 
