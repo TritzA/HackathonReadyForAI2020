@@ -28,10 +28,6 @@ Zoom sur le haut du classement.
 
 ![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/top.PNG)
 
-Zoom sur le bas du classement.
-
-![alt text](https://github.com/TritzA/HackathonReadyForAi2020/blob/master/classement/fin.PNG)
-
 ### Première exemple de partie : partie de classement évaluée (notre nom d'équipe est MSL)
 
 Exemple de partie de le compétition (étape 1/6)
