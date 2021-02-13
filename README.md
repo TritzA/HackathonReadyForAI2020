@@ -1,4 +1,4 @@
-# HackathonReadyForAI2020
+# Hackathon-Ready-For-AI-2020
 
 Hackathon Ready For AI 2020 (4e place sur 25).
 
